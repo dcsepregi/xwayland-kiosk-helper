@@ -133,7 +133,7 @@ fi
 
 # Launch Xwayland.
 SNAPPY_PRELOAD=$SNAP \
-LD_PRELOAD=$SNAP/lib/libxwayland-preload.so \
+LD_PRELOAD=$SNAP/usr/local/lib/libxwayland-preload.so \
   $SNAP/usr/bin/Xwayland -terminate :${port} &
 
 trap "trap - SIGTERM EXIT && kill -- -$$" SIGINT SIGTERM SIGQUIT EXIT # kill on signal or quit
